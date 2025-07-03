@@ -27,13 +27,13 @@ namespace RegistroProductosApp
             string nombre = Console.ReadLine();
 
             Console.Write("Ingrese el precio del producto: ");
-            double precio = Convert.ToDouble(Console.ReadLine());
+            double precio = double.Parse(Console.ReadLine());
 
             Console.Write("Ingrese el stock del producto: ");
             int stock = int.Parse(Console.ReadLine());
 
             productos.Add(new Producto(nombre, precio, stock));
-            Console.WriteLine("\nProducto registrado correctamente.");
+            Console.WriteLine("\nProducto registrado correctamente!");
 
             Console.WriteLine("\nPresione una tecla para continuar...");
             Console.ReadKey();
@@ -44,7 +44,7 @@ namespace RegistroProductosApp
         {
             if (productos.Count == 0)
             {
-                Console.WriteLine("No hay productos registrados.");
+                Console.WriteLine("No hay productos registrados!");
             }
             else
             {
@@ -74,12 +74,12 @@ namespace RegistroProductosApp
                 productos[indice].nombre = Console.ReadLine();
 
                 Console.Write("Nuevo precio: ");
-                productos[indice].precio = Convert.ToDouble(Console.ReadLine());
+                productos[indice].precio = double.Parse(Console.ReadLine());
 
                 Console.Write("Nuevo stock: ");
                 productos[indice].stock = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("\nProducto modificado correctamente.");
+                Console.WriteLine("\nProducto modificado correctamente!");
             }
             else
             {
@@ -101,11 +101,14 @@ namespace RegistroProductosApp
 
             do
             {
-                Console.WriteLine("Bienvenidos al sistema de registro de productos:");
+                Console.WriteLine("-------------------------------------------------");
+                Console.WriteLine("Bienvenido al sistema de registro de productos:");
+                Console.WriteLine("-------------------------------------------------");
                 Console.WriteLine("1. Registrar producto");
                 Console.WriteLine("2. Mostrar productos");
                 Console.WriteLine("3. Modificar producto");
                 Console.WriteLine("0. Salir");
+                Console.WriteLine("-------------------------------------------------");
                 Console.Write("Seleccione una opción: ");
                 opcion = int.Parse(Console.ReadLine());
 
